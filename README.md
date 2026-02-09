@@ -15,7 +15,43 @@ Site optimisé pour un référencement Google optimal avec :
 - ✅ Performance Core Web Vitals optimisée
 - ✅ Contenu structuré sémantique
 
-## 🛠️ Technologies
+## � Configuration du Portfolio
+
+### Ajout des Images de Projets
+
+Pour personnaliser le portfolio avec vos propres images de projets :
+
+1. **Créer le dossier portfolio** :
+   ```bash
+   mkdir -p public/portfolio
+   ```
+
+2. **Ajouter les images** (format recommandé : JPG/WebP, 1200x800px minimum) :
+   ```
+   public/portfolio/
+   ├── fl-renovation.jpg
+   ├── dpc-immobilier.jpg
+   ├── ap-design.jpg
+   ├── trading-bot.jpg
+   ├── cabinet-dentaire.jpg
+   └── prixfrance.jpg
+   ```
+
+3. **Noms des fichiers** (doivent correspondre exactement) :
+   - `fl-renovation.jpg` - Site vitrine FL Rénovation
+   - `dpc-immobilier.jpg` - Site DPC Immobilier
+   - `ap-design.jpg` - E-commerce AP Design
+   - `trading-bot.jpg` - Application Trading Bot AI
+   - `cabinet-dentaire.jpg` - Cabinet Dentaire Montrabé
+   - `prixfrance.jpg` - Observatoire PrixFrance
+
+### Optimisation des Images
+- **Format** : WebP pour de meilleures performances
+- **Taille** : 1200x800px minimum (ratio 16:10)
+- **Poids** : < 500KB par image
+- **Qualité** : Haute résolution pour le design premium
+
+## �🛠️ Technologies
 
 - **Frontend**: React 19 + TypeScript + Vite
 - **Styling**: Tailwind CSS + Glassmorphism

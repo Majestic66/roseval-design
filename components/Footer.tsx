@@ -51,7 +51,9 @@ const Footer: React.FC = () => {
               <li><button onClick={() => scrollTo('pricing')} className="hover:text-indigo-400 transition-colors cursor-pointer">Tarifs</button></li>
               <li><button className="hover:text-indigo-400 transition-colors opacity-50 cursor-not-allowed">Blog (Bientôt)</button></li>
               <li><button className="hover:text-indigo-400 transition-colors opacity-50 cursor-not-allowed">Études de cas</button></li>
-              <li><button className="hover:text-indigo-400 transition-colors opacity-50 cursor-not-allowed">Mentions Légales</button></li>
+              <li><a href="/mentions-legales" className="hover:text-indigo-400 transition-colors">Mentions Légales</a></li>
+              <li><a href="/politique-confidentialite" className="hover:text-indigo-400 transition-colors">Politique de Confidentialité</a></li>
+              <li><a href="/politique-cookies" className="hover:text-indigo-400 transition-colors">Politique des Cookies</a></li>
             </ul>
           </div>
 

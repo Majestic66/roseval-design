@@ -10,6 +10,9 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AiAssistant from './components/AiAssistant';
 import SEOHead from './components/SEOHead';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import LegalNotice from './components/LegalNotice';
+import CookiePolicy from './components/CookiePolicy';
 import { ShoppingBag, Globe, Video, ChevronRight, User, X, Check, Target, Zap, ShieldCheck, Award } from 'lucide-react';
 
 const AboutModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
@@ -299,6 +302,9 @@ const App: React.FC = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/politique-confidentialite" element={<PrivacyPolicy />} />
+          <Route path="/mentions-legales" element={<LegalNotice />} />
+          <Route path="/politique-cookies" element={<CookiePolicy />} />
         </Routes>
         <AiAssistant />
         <Footer />
