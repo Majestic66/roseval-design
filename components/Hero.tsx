@@ -7,6 +7,25 @@ const Hero: React.FC = () => {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const heroSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Roseval Design - Agence Web Premium Toulouse",
+    "description": "Agence web d'élite à Toulouse spécialisée dans la création de sites internet haute performance, SEO et automatisation IA",
+    "url": "https://roseval-design.vercel.app/",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Roseval Design",
+      "description": "Création de sites web professionnels à Toulouse",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toulouse",
+        "addressRegion": "Occitanie",
+        "addressCountry": "FR"
+      }
+    }
+  };
+
   return (
     <section
       id="hero"
@@ -15,26 +34,12 @@ const Hero: React.FC = () => {
       itemType="https://schema.org/WebPage"
     >
       {/* Données structurées pour la section Hero */}
-      <script type="application/ld+json">
-      {{
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Roseval Design - Agence Web Premium Toulouse",
-        "description": "Agence web d'élite à Toulouse spécialisée dans la création de sites internet haute performance, SEO et automatisation IA",
-        "url": "https://roseval-design.vercel.app/",
-        "mainEntity": {{
-          "@type": "LocalBusiness",
-          "name": "Roseval Design",
-          "description": "Création de sites web professionnels à Toulouse",
-          "address": {{
-            "@type": "PostalAddress",
-            "addressLocality": "Toulouse",
-            "addressRegion": "Occitanie",
-            "addressCountry": "FR"
-          }}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(heroSchema)
         }}
-      }}
-      </script>
+      />
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-px bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>

@@ -41,6 +41,55 @@ const services = [
 ];
 
 const Services: React.FC = () => {
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Services Roseval Design",
+    "description": "Services web professionnels proposés par Roseval Design à Toulouse",
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Service",
+          "name": "Conception Web Elite",
+          "description": "Création d'interfaces web haute performance optimisées pour la conversion",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Roseval Design"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Service",
+          "name": "SEO Haute Visibilité",
+          "description": "Optimisation pour les moteurs de recherche et référencement local Toulouse",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Roseval Design"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Service",
+          "name": "Automatisation & IA",
+          "description": "Intégration d'agents IA et automatisation des processus métier",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Roseval Design"
+          }
+        }
+      }
+    ]
+  };
+
   return (
     <section
       id="services"
@@ -49,56 +98,12 @@ const Services: React.FC = () => {
       itemType="https://schema.org/Service"
     >
       {/* Données structurées pour les services */}
-      <script type="application/ld+json">
-      {{
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Services Roseval Design",
-        "description": "Services web professionnels proposés par Roseval Design à Toulouse",
-        "numberOfItems": 6,
-        "itemListElement": [
-          {{
-            "@type": "ListItem",
-            "position": 1,
-            "item": {{
-              "@type": "Service",
-              "name": "Conception Web Elite",
-              "description": "Création d'interfaces web haute performance optimisées pour la conversion",
-              "provider": {{
-                "@type": "LocalBusiness",
-                "name": "Roseval Design"
-              }}
-            }}
-          }},
-          {{
-            "@type": "ListItem",
-            "position": 2,
-            "item": {{
-              "@type": "Service",
-              "name": "SEO Haute Visibilité",
-              "description": "Optimisation pour les moteurs de recherche et référencement local Toulouse",
-              "provider": {{
-                "@type": "LocalBusiness",
-                "name": "Roseval Design"
-              }}
-            }}
-          }},
-          {{
-            "@type": "ListItem",
-            "position": 3,
-            "item": {{
-              "@type": "Service",
-              "name": "Automatisation & IA",
-              "description": "Intégration d'agents IA et automatisation des processus métier",
-              "provider": {{
-                "@type": "LocalBusiness",
-                "name": "Roseval Design"
-              }}
-            }}
-          }}
-        ]
-      }}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(servicesSchema)
+        }}
+      />
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-24 gap-10">
           <div className="max-w-3xl">
