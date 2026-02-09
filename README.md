@@ -24,7 +24,6 @@ Site optimisé pour un référencement Google optimal avec :
 
 ### 📱 Expérience Utilisateur
 - ✅ **Partage social intégré** : Boutons Facebook, Twitter, LinkedIn
-- ✅ **Statistiques temps réel** : Widget live avec métriques simulées
 - ✅ **Navigation optimisée** : Logo ramène à l'accueil depuis toutes les pages
 - ✅ **Responsive design** : Parfait sur tous les appareils
 
@@ -36,8 +35,6 @@ Site optimisé pour un référencement Google optimal avec :
 
 ### 📊 Analytics & Métriques
 - ✅ **Rapport de performance** : Analyse automatique des métriques
-- ✅ **Suivi temps réel** : Statistiques visiteurs simulées
-- ✅ **Métriques engagement** : Temps moyen, taux de rebond
 - ✅ **Optimisations continues** : Scripts pour maintenance
 ## � Configuration du Portfolio
 
