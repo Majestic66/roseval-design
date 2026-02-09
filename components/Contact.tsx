@@ -1,8 +1,56 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    projectType: 'Site Vitrine (399€)',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    setSuccess(false);
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+
+      setSuccess(true);
+      setFormData({ name: '', email: '', projectType: 'Site Vitrine (399€)', message: '' });
+      setTimeout(() => setSuccess(false), 5000);
+    } catch (err) {
+      setError('Erreur lors de l\'envoi. Veuillez réessayer.');
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 px-6">
       <div className="container mx-auto">
@@ -57,26 +105,49 @@ const Contact: React.FC = () => {
 
             {/* Form Side */}
             <div className="lg:w-2/3 p-12 lg:p-16 bg-black/40">
-              <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+              {success && (
+                <div className="mb-6 p-4 bg-green-500/20 border border-green-500 rounded-2xl text-green-300 text-center">
+                  ✅ Votre demande a été envoyée avec succès! Nous vous répondrons sous 24h.
+                </div>
+              )}
+              {error && (
+                <div className="mb-6 p-4 bg-red-500/20 border border-red-500 rounded-2xl text-red-300 text-center">
+                  ❌ {error}
+                </div>
+              )}
+              <form className="space-y-8" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Nom / Entreprise</label>
                     <input 
-                      type="text" 
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
                       className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-indigo-500 focus:outline-none transition-colors"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Email</label>
                     <input 
-                      type="email" 
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-indigo-500 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Type de projet</label>
-                  <select className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-indigo-500 focus:outline-none transition-colors appearance-none text-gray-300">
+                  <select 
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleChange}
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-indigo-500 focus:outline-none transition-colors appearance-none text-gray-300"
+                  >
                     <option className="bg-gray-900">Site Vitrine (399€)</option>
                     <option className="bg-gray-900">Site E-commerce (900€+)</option>
                     <option className="bg-gray-900">Réseaux Sociaux</option>
@@ -86,13 +157,21 @@ const Contact: React.FC = () => {
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-400 uppercase tracking-widest">Détails du projet</label>
                   <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     rows={4}
                     placeholder="Décrivez votre besoin à Toulouse..."
                     className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-indigo-500 focus:outline-none transition-colors resize-none"
                   ></textarea>
                 </div>
-                <button className="w-full py-5 bg-white text-black rounded-2xl font-bold text-xl flex items-center justify-center gap-4 hover:bg-gray-200 transition-all active:scale-95">
-                  Demander mon devis gratuit
+                <button 
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-5 bg-white text-black rounded-2xl font-bold text-xl flex items-center justify-center gap-4 hover:bg-gray-200 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? 'Envoi en cours...' : 'Demander mon devis gratuit'}
                   <Send size={24} />
                 </button>
               </form>
