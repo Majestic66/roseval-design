@@ -1,30 +1,23 @@
 {
-  "name": "Roseval Design - Agence Web Toulouse",
+  "name": "Roseval Design - Agence Web Premium Toulouse",
   "short_name": "Roseval Design",
-  "description": "Agence web premium à Toulouse spécialisée dans la création de sites internet, SEO et automatisation IA",
+  "description": "Agence web d'élite à Toulouse spécialisée dans la création de sites internet haute performance, SEO et automatisation IA",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#020617",
+  "background_color": "#0f0f23",
   "theme_color": "#6366f1",
-  "orientation": "portrait-primary",
-  "scope": "/",
-  "lang": "fr-FR",
-  "categories": ["business", "productivity", "utilities"],
   "icons": [
     {
-      "src": "/favicon-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png"
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Instagram, Twitter, Linkedin, Github } from 'lucide-react';
+import SocialShare from './SocialShare';
 
 const Footer: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -69,6 +70,9 @@ const Footer: React.FC = () => {
               <button className="mt-4 w-full py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all active:scale-95 cursor-pointer">
                 S'abonner
               </button>
+            </div>
+            <div className="mt-6 pt-6 border-t border-white/10">
+              <SocialShare />
             </div>
           </div>
         </div>

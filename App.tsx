@@ -13,6 +13,7 @@ import SEOHead from './components/SEOHead';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import LegalNotice from './components/LegalNotice';
 import CookiePolicy from './components/CookiePolicy';
+import LiveStats from './components/LiveStats';
 import { ShoppingBag, Globe, Video, ChevronRight, User, X, Check, Target, Zap, ShieldCheck, Award } from 'lucide-react';
 
 const AboutModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
@@ -307,6 +308,7 @@ const App: React.FC = () => {
           <Route path="/politique-cookies" element={<CookiePolicy />} />
         </Routes>
         <AiAssistant />
+        <LiveStats />
         <Footer />
       </div>
     </Router>

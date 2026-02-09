@@ -14,7 +14,31 @@ Site optimisé pour un référencement Google optimal avec :
 - ✅ Robots.txt optimisé
 - ✅ Performance Core Web Vitals optimisée
 - ✅ Contenu structuré sémantique
+## 🎉 Nouvelles Fonctionnalités v2.0
 
+### 🎨 Branding & Design
+- ✅ **Favicon personnalisé** : Logo "R" blanc sur fond violet
+- ✅ **Screenshots Open Graph** : Images automatiques pour partage social
+- ✅ **PWA Ready** : Manifest et icônes pour installation mobile
+- ✅ **Thème cohérent** : Couleur violet (#6366f1) partout
+
+### 📱 Expérience Utilisateur
+- ✅ **Partage social intégré** : Boutons Facebook, Twitter, LinkedIn
+- ✅ **Statistiques temps réel** : Widget live avec métriques simulées
+- ✅ **Navigation optimisée** : Logo ramène à l'accueil depuis toutes les pages
+- ✅ **Responsive design** : Parfait sur tous les appareils
+
+### 🚀 Performance & SEO
+- ✅ **Scripts d'automatisation** : Génération favicon, screenshots, rapports
+- ✅ **Routing SPA optimisé** : URLs propres avec BrowserRouter
+- ✅ **Lazy loading** : Images et composants chargés à la demande
+- ✅ **Core Web Vitals** : Scores optimisés pour Google
+
+### 📊 Analytics & Métriques
+- ✅ **Rapport de performance** : Analyse automatique des métriques
+- ✅ **Suivi temps réel** : Statistiques visiteurs simulées
+- ✅ **Métriques engagement** : Temps moyen, taux de rebond
+- ✅ **Optimisations continues** : Scripts pour maintenance
 ## � Configuration du Portfolio
 
 ### Ajout des Images de Projets

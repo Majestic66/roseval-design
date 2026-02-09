@@ -9,7 +9,10 @@
     "preview": "vite preview",
     "seo:audit": "echo 'SEO audit completed'",
     "sitemap:generate": "node scripts/generate-sitemap.js",
-    "seo:optimize": "npm run sitemap:generate && npm run build"
+    "favicon:generate": "node scripts/generate-favicon.js",
+    "screenshot:take": "node scripts/take-screenshot.js",
+    "performance:check": "node scripts/performance-check.js",
+    "seo:optimize": "npm run sitemap:generate && npm run favicon:generate && npm run performance:check && npm run build"
   },
   "dependencies": {
     "@google/genai": "^1.40.0",
@@ -22,6 +25,8 @@
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
+    "puppeteer": "^24.37.2",
+    "sharp": "^0.34.5",
     "terser": "^5.46.0",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
