@@ -6,37 +6,37 @@ const projects = [
   {
     title: "FL Rénovation",
     category: "Site vitrine pour entreprise de rénovation",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800",
+    image: "/portfolio/fl-renovation.jpg", // Remplacer par votre image
     link: "https://www.fl-renovation.com/"
   },
   {
     title: "DPC Immobilier",
     category: "Site de service immobilier",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+    image: "/portfolio/dpc-immobilier.jpg", // Remplacer par votre image
     link: "https://www.dpcimmobilier.com/"
   },
   {
     title: "AP Design",
     category: "Site e-commerce pour AP Design",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
+    image: "/portfolio/ap-design.jpg", // Remplacer par votre image
     link: "https://ap-design.store/"
   },
   {
     title: "Trading Bot AI",
     category: "Application de trading automatisé avec IA",
-    image: "https://images.unsplash.com/photo-1611974714013-3c846551847a?auto=format&fit=crop&q=80&w=800",
+    image: "/portfolio/trading-bot.jpg", // Remplacer par votre image
     link: "https://tradingbotairosevaldesign.vercel.app/"
   },
   {
     title: "Cabinet Dentaire Montrabé",
     category: "Site vitrine médical (Dr Robles & associés)",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800",
+    image: "/portfolio/cabinet-dentaire.jpg", // Remplacer par votre image
     link: "https://cabinetdentairemontrabe.vercel.app/"
   },
   {
     title: "PrixFrance",
     category: "Observatoire collaboratif (Données INSEE)",
-    image: "https://images.unsplash.com/photo-1551288049-bbdac8a28a1e?auto=format&fit=crop&q=80&w=800",
+    image: "/portfolio/prixfrance.jpg", // Remplacer par votre image
     link: "https://prixfrance.lovable.app/"
   }
 ];
