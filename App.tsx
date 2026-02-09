@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AiAssistant from './components/AiAssistant';
+import SEOHead from './components/SEOHead';
 import { ShoppingBag, Globe, Video, ChevronRight, User, X, Check, Target, Zap, ShieldCheck, Award } from 'lucide-react';
 
 const AboutModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
@@ -274,6 +275,7 @@ const PricingSection: React.FC = () => {
 const LandingPage: React.FC = () => {
   return (
     <main className="relative">
+      <SEOHead />
       <div className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] rounded-full bg-indigo-600/10 blur-[150px] animate-pulse"></div>
         <div className="absolute bottom-[0%] right-[-10%] w-[700px] h-[700px] rounded-full bg-purple-600/10 blur-[150px] animate-pulse delay-1000"></div>

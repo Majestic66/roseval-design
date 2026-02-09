@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Pages importantes à indexer en priorité
+Allow: /
+Allow: /#hero
+Allow: /#services
+Allow: /#portfolio
+Allow: /#process
+Allow: /#testimonials
+Allow: /#contact
+
+# Bloquer les ressources non essentielles
+Disallow: /api/
+Disallow: /node_modules/
+Disallow: /.env*
+
+# Sitemap
+Sitemap: https://roseval-design.vercel.app/sitemap.xml
+
+# Crawl-delay pour être poli avec le serveur
+Crawl-delay: 1

@@ -8,7 +8,33 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-40 pb-24 flex flex-col items-center justify-center overflow-hidden px-6">
+    <section
+      id="hero"
+      className="relative min-h-screen pt-40 pb-24 flex flex-col items-center justify-center overflow-hidden px-6"
+      itemScope
+      itemType="https://schema.org/WebPage"
+    >
+      {/* Données structurées pour la section Hero */}
+      <script type="application/ld+json">
+      {{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Roseval Design - Agence Web Premium Toulouse",
+        "description": "Agence web d'élite à Toulouse spécialisée dans la création de sites internet haute performance, SEO et automatisation IA",
+        "url": "https://roseval-design.vercel.app/",
+        "mainEntity": {{
+          "@type": "LocalBusiness",
+          "name": "Roseval Design",
+          "description": "Création de sites web professionnels à Toulouse",
+          "address": {{
+            "@type": "PostalAddress",
+            "addressLocality": "Toulouse",
+            "addressRegion": "Occitanie",
+            "addressCountry": "FR"
+          }}
+        }}
+      }}
+      </script>
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-px bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
@@ -28,12 +54,18 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <h1 className="text-6xl md:text-9xl font-black mb-8 leading-[0.9] tracking-tighter outfit animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300">
+        <h1
+          className="text-6xl md:text-9xl font-black mb-8 leading-[0.9] tracking-tighter outfit animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300"
+          itemProp="headline"
+        >
           Digital<br />
           <span className="gradient-text">Exception.</span>
         </h1>
 
-        <p className="max-w-3xl mx-auto text-slate-400 text-xl md:text-2xl mb-14 font-light leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500">
+        <p
+          className="max-w-3xl mx-auto text-slate-400 text-xl md:text-2xl mb-14 font-light leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500"
+          itemProp="description"
+        >
           Nous créons des interfaces qui <span className="text-white font-bold">captivent</span>, <span className="text-white font-bold">convertissent</span> et <span className="text-white font-bold">propulsent</span> votre activité à Toulouse vers de nouveaux sommets.
         </p>
 

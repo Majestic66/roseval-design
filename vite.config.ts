@@ -18,6 +18,33 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      build: {
+        // Optimisations SEO et performance
+        rollupOptions: {
+          output: {
+            manualChunks: {
+              vendor: ['react', 'react-dom'],
+              ui: ['lucide-react'],
+              ai: ['@google/genai']
+            }
+          }
+        },
+        // Optimisation des assets
+        assetsInlineLimit: 4096,
+        cssCodeSplit: true,
+        sourcemap: false,
+        minify: 'terser',
+        terserOptions: {
+          compress: {
+            drop_console: mode === 'production',
+            drop_debugger: mode === 'production'
+          }
+        }
+      },
+      // Optimisations pour le SEO
+      esbuild: {
+        drop: mode === 'production' ? ['console', 'debugger'] : []
       }
     };
 });
