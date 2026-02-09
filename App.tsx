@@ -160,7 +160,6 @@ const AboutSection: React.FC = () => {
                      <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_15px_rgba(16,185,129,0.8)]"></div>
                      <span className="outfit font-black tracking-tight text-xl">Disponible</span>
                    </div>
-                   <span className="text-[10px] text-indigo-400 uppercase tracking-[0.25em] font-black block">Projets 2024-25</span>
                 </div>
 
                 <div className="absolute -bottom-8 -left-8 px-8 py-4 glass rounded-3xl border border-white/10 text-white text-sm font-bold shadow-2xl z-20 flex items-center gap-4">
