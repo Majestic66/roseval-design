@@ -295,8 +295,37 @@ const LandingPage: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  const [showIntro, setShowIntro] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.location.pathname === '/';
+  });
+
+  useEffect(() => {
+    if (!showIntro) return;
+
+    const onMessage = (event: MessageEvent) => {
+      if (event.origin !== window.location.origin) return;
+      if (event.data?.type === 'roseval-intro-complete') {
+        setShowIntro(false);
+      }
+    };
+
+    window.addEventListener('message', onMessage);
+    return () => window.removeEventListener('message', onMessage);
+  }, [showIntro]);
+
   return (
     <Router>
+      {showIntro && (
+        <div className="fixed inset-0 z-[9999] bg-[#0d0d11]">
+          <iframe
+            src="/roseval-intro.html"
+            title="Introduction Roseval Design"
+            className="w-full h-full border-0"
+            allow="fullscreen"
+          />
+        </div>
+      )}
       <div className="min-h-screen selection:bg-indigo-500/40 text-slate-200">
         <Navbar />
         <Routes>
