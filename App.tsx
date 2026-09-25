@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import IntroOverlay from './components/IntroOverlay';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
@@ -298,6 +299,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="min-h-screen selection:bg-indigo-500/40 text-slate-200">
+        <IntroOverlay />
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
